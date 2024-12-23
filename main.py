@@ -1,9 +1,23 @@
 import sys
 import os
+from pathlib import Path
 
-# Add the src directory to the Python path
-#sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
+PROJECT_ROOT = Path(__file__).parent.parent.parent.parent.absolute()
+sys.path.insert(0, str(PROJECT_ROOT))  # Using insert(0) for higher priority
 
-from textSummarizer.logging.logging import logger
+from src.textSummarizer.pipeline.stage_01_data_ingestion_pipeline import DataIngestionTrainPipeline
+from src.textSummarizer.logging.logging import logger
 
-logger.info("This is the custom log of this project")
+STAGE_NAME = "data_ingestion_stage"
+try:
+    logger.info(f"Starting {STAGE_NAME} pipeline...")
+    pipeline = DataIngestionTrainPipeline()
+    pipeline.main()
+    logger.info(f"{STAGE_NAME} pipeline completed successfully.")
+except Exception as e:
+    logger.exception(e)
+    raise e
+
+
+
+

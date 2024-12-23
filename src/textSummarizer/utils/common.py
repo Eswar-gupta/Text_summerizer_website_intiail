@@ -8,6 +8,7 @@ from ensure import ensure_annotations
 from box import ConfigBox
 from pathlib import Path
 from typing import Any
+from numpy import dtype
 
 
 @ensure_annotations
@@ -60,3 +61,9 @@ def get_size(path: Path) -> str:
     size_in_kb = round(os.path.getsize(path)/1024)
     return f"~ {size_in_kb} KB"
 
+if __name__ == "__main__":
+    path_ = Path(r"D:\1Acads_local\AI_related_projects\github_projects\text_summeriser_project\Text_summerizer_website_intiail\config\config.yaml")
+    print(path_)
+    idk = read_yaml(path_)
+    print(idk)
+    
