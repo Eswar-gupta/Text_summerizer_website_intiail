@@ -17,3 +17,21 @@ data_transformation:
   root_dir: artifacts/data_transformation
   data_path: artifacts/data_ingestion/samsum_dataset
   tokenizer_name: google/pegasus-cnn_dailymail
+
+
+model_trainer:
+  root_dir: artifacts/model_trainer
+  data_path: artifacts/data_transformation/samsum_dataset
+  model_ckpt: google/pegasus-cnn_dailymail
+  hf_token: c98e24f251d885e402cac98c4ade77cba2c19568
+  # Training parameters
+  num_train_epochs: 1
+  warmup_steps: 0
+  per_device_train_batch_size: 1
+  per_device_eval_batch_size: 1
+  weight_decay: 0.01
+  logging_steps: 1000
+  evaluation_strategy: steps
+  eval_steps: 500
+  gradient_accumulation_steps: 16
+  save_steps: 1000000
