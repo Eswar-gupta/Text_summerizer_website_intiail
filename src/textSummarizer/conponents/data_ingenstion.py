@@ -1,9 +1,10 @@
 import os
-import requests
+import urllib.request
 import zipfile
 import logging
 import sys
 from pathlib import Path
+from requests import request
 # Go up 4 levels: components -> textSummarizer -> src -> Project root
 PROJECT_ROOT = Path(__file__).parent.parent.parent.parent.absolute()
 sys.path.insert(0, str(PROJECT_ROOT))  # Using insert(0) for higher priority
@@ -11,6 +12,24 @@ sys.path.insert(0, str(PROJECT_ROOT))  # Using insert(0) for higher priority
 from src.textSummarizer.logging.logging import logger
 from src.textSummarizer.utils.common import get_size
 from src.textSummarizer.entity import DataingestionConfig
+
+import os
+import urllib.request
+import zipfile
+import logging
+from pathlib import Path
+
+import os
+import requests
+import zipfile
+import logging
+from pathlib import Path
+import magic
+
+def get_file_type(file_path):
+    """Detect file type using magic numbers"""
+    mime = magic.Magic()
+    return mime.from_file(file_path)
 
 class DataIngestion:
     def __init__(self, config):
@@ -20,7 +39,7 @@ class DataIngestion:
 
     def download_file(self):
         try:
-            source_url = self.config.source_url
+            source_url = self.config.source_URL
             local_file = self.config.local_data_file
 
             # Create directory if needed

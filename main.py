@@ -10,6 +10,8 @@ from src.textSummarizer.pipeline.stage_02_data_validation_pipeline import DataVa
 from src.textSummarizer.pipeline.stage_03_data_traformation_pipeline import DataTransformationTrainingPipeline
 from src.textSummarizer.logging.logging import logger
 
+print("================================================")
+
 STAGE_NAME = "data_ingestion_stage"
 try:
     logger.info(f">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Starting {STAGE_NAME} pipeline...")
@@ -19,7 +21,7 @@ try:
 except Exception as e:
     logger.exception(e)
     raise e
-
+"""
 STAGE_NAME = "data_validation_stage"
 try:
     logger.info(f">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Starting {STAGE_NAME} pipeline...")
@@ -42,7 +44,7 @@ except Exception as e:
         raise e
 
 
-
+"""
 
 
 
