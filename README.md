@@ -1,6 +1,10 @@
+website link --> https://eswargupta.pythonanywhere.com/TextSummerizer
+API was 
+
+---
 # End to end text summerization website making
 ---
-## workflow for any website creation
+## workflow
 |1. Intial setup-->
 - Template.py,setup.py,requriments.py,logging,exception_handling create the excpetion class(for this project we are using a custom exception called box.exception) , utils-->if have anything that you you use offen in many places and you no that before in hand then keep that hear
 
