@@ -1,5 +1,6 @@
-website link --> https://eswargupta.pythonanywhere.com/TextSummerizer
-API was not working suddenly will fix in few days
+| website link --> https://eswargupta.pythonanywhere.com/TextSummerizer
+ - API was not working suddenly will fix in few days
+---
 
 ---
 # End to end text summerization website making
